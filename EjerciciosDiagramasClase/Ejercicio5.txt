@@ -1,0 +1,79 @@
+class Inmobiliaria{
+constructor(Nombre,IdInmobiliaria, ListadoViviendas){
+this.Nombre = Nombre;
+this.IdInmobiliaria = IdInmobiliaria;
+this.ListadoViviendas = ListadoViviendas;
+}
+getNombre(){
+return this.Nombre;
+}
+setNombre(Nombre){
+this.Nombre = Nombre;
+}
+getIdInmobiliaria(){
+return this.IdInmobiliaria;
+}
+setIdInmobiliaria(IdInmobiliaria){
+this.IdInmobiliaria = IdInmobiliaria;
+}
+mostrarListadoViviendas(){
+console.log('Inmobiliaria: ' + this.Nombre + ' Id: ' + this.IdInmobiliaria);
+for(let i = 0; i<ListadoViviendas.length; i++){
+this.ListadoViviendas[i].mostrarVivienda();
+}
+}
+}
+
+class Vivienda{
+constructor(IdVivienda,Area,NumHabitaciones,Direccion, Precio){
+this.IdVivienda = IdVivienda;
+this.Area = Area;
+this.NumHabitaciones = NumHabitaciones;
+this.Direccion = Direccion;
+this.Precio = Precio;
+}
+getIdVivienda(){
+return this.IdVivienda;
+}
+setIdVivienda(IdVivienda){
+this.IdVivienda = IdVivienda;
+}
+getArea(){
+return this.Area;
+}
+setArea(Area){
+this.Area = Area;
+}
+getNumHabitaciones(){
+return this.NumHabitaciones;
+}
+setNumHabitaciones(NumHabitaciones){
+this.NumHabitaciones = NumHabitaciones;
+}
+getDireccion(){
+return this.Direccion;
+}
+setDireccion(Direccion){
+this.Direccion = Direccion;
+}
+getPrecio(){
+return this.Precio;
+}
+setPrecio(Precio){
+this.Precio = Precio;
+}
+mostrarVivienda(){
+console.log('Id vivienda: ' + this.IdVivienda + ' Area Vivienda: ' + this.Area + ' Número de Habitaciones: ' + this.NumHabitaciones + ' Dirección: ' + this.Direccion + ' Precio €/mes: ' + this.Precio);
+}
+
+}
+let ListadoViviendas = new Array (6);
+ListadoViviendas[0] = new Vivienda (0001,1,2,'C/ Creacion,Nº1           ', 750)
+ListadoViviendas[1] = new Vivienda (0002,2,1,'C/ Campo Santo,Nº2        ', 750)
+ListadoViviendas[2] = new Vivienda (0003,3,3,'C/ Colón,Nº3              ', 750)
+ListadoViviendas[3] = new Vivienda (0004,4,4,'C/ Belén,Nº4              ', 750)
+ListadoViviendas[4] = new Vivienda (0005,5,2,'C/ Santisima Trinidad, Nº5', 750)
+ListadoViviendas[5] = new Vivienda (0006,6,3,'C/ Mozart,Nº6             ', 750)
+
+let inmobiliaria = new Inmobiliaria ('Inmobiliaria Crevillente','03330',ListadoViviendas);
+inmobiliaria.mostrarListadoViviendas()
